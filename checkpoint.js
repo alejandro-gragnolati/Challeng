@@ -7,7 +7,12 @@ function sumaTodosImpares(array) {
   // sumaTodosImpares([1, 5, 2, 9, 6, 4]) devuelve 1 + 5 + 9 = 15
 
   // Tu código aca:
-  
+var suma = 0 
+for (var i=0 ; i < array.length ; i++)
+{ if (array[i] % 2 === 1) 
+ {suma = suma + array[i]; } }
+return suma; 
+
 }
 
 function stringMasLarga(str) {
@@ -19,7 +24,15 @@ function stringMasLarga(str) {
   // Tip: podes usar el metodo de String 'split'
 
   // Tu código aca:
+  var separacion = str.split(" ")
+var string = ""
 
+for(var i = 0; i < separacion.length; i++) {
+if(string.length < separacion[i].length){
+string = separacion[i]
+}
+}
+return string;
 }
 
 function estaOffline(usuarios, nombre) {
@@ -46,7 +59,14 @@ function estaOffline(usuarios, nombre) {
 
   // Tu código aca:
   
+  for(var i=0 ; i< usuarios.length ; i++)
+  if (usuarios[i].nombre === nombre)
+  if  (usuarios[i].online === true) 
+  {return false}
+  else {return true}
 }
+
+ 
 
 function actividadesEnComun(persona1, persona2) {
   // La funcion llamada 'actividadesEnComun' recibe como argumento dos arrays de actividades (strings) llamados 'persona1' y 'persona2'
@@ -56,8 +76,15 @@ function actividadesEnComun(persona1, persona2) {
   // actividadesEnComun(persona1, persona2) => ['comer', 'dormir']
   // Tip: podes usar ciclos for anidados.
   // Tu código aca:
-
-}
+  
+  var iguales = []
+   for (var i=0 ; i < persona1.length ; i++) {
+    for ( var x=0 ; x < persona2.length ; x++) 
+      if (persona1[i] === persona2[x])
+        iguales.push(persona1[i])
+         ;} 
+  return iguales 
+ }
 
 function buscaDestruye(arreglo, num) {
   // La funcion 'buscaDestruye' recibe como argumento un array de enteros 'arreglo' y un entero 'num'.
@@ -69,6 +96,10 @@ function buscaDestruye(arreglo, num) {
   //
   // Tu código aca:
 
+  for (var i=0 ; i < arreglo.length ; i++){
+   if (arreglo[i] === num)
+  arreglo.splice(i,1)}
+ return arreglo
 }
 
 function sumarElTipo(arreglo) {
@@ -81,9 +112,9 @@ function sumarElTipo(arreglo) {
   // Tip: podes usar el ciclo for o el metodo de Array 'reduce'
 
   // Tu código aca:
-
-}
-
+  
+  
+;} 
 // =======================================================================
 
 function crearClaseEmprendedor() {
@@ -93,15 +124,20 @@ function crearClaseEmprendedor() {
           // Inicializar las propiedades del emprendedor con los valores recibidos como argumento
 
           // Tu código aca:
-
+         
+          this. nombre = nombre
+          this.apellido = apellido
+          this.libros = libros
+          this.mascotas = mascotas
       }
 
       addMascota(mascota) {
         // este método debe agregar una mascota (mascota) al arreglo de mascotas del emprendedor.
         // no debe retornar nada.
 
-        // Tu código aca:
-
+        // Tu código aca: 
+        
+        this.mascotas.push(mascota)
       }
 
       getMascotas() {
@@ -110,8 +146,9 @@ function crearClaseEmprendedor() {
           // Suponiendo que el emprendedor tiene estas mascotas: ['perro', 'gato']
           // emprendedor.getMascotas() debería devolver 2
 
-          // Tu código aca:
-
+          // Tu código aca: 
+         
+          return this.mascotas.lenght 
       }
 
       addBook(book, autor) {
@@ -120,6 +157,7 @@ function crearClaseEmprendedor() {
           // No debe retornar nada.
 
           // Tu código aca:
+          this.libros.push({nombre: book , autor: autor})
 
       }
 
@@ -130,7 +168,9 @@ function crearClaseEmprendedor() {
           // emprendedor.getBooks() debería devolver ['El señor de las moscas', 'Fundacion']
 
           // Tu código aca:
-
+          var array = []
+        this.libros.map((Object) => array.push(Object ["nombre"]))
+        return array
       }
 
       getFullName() {
@@ -140,7 +180,8 @@ function crearClaseEmprendedor() {
           // emprendedor.getFullName() deberia devolver 'Elon Musk'
 
           // Tu código aca:
-
+        return this.nombre + " " + this.apellido
+          
       }
   }
 
@@ -164,6 +205,7 @@ function mapear() {
   // }) devuelve [2, 3, 4, 5]
 
   // Tu código aca:
+  
 
 }
 
