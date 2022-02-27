@@ -170,7 +170,7 @@ function crearClaseEmprendedor() {
           // Tu código aca:
           var array = []
         this.libros.map((Object) => array.push(Object ["nombre"]))
-        return array
+        return array;
       }
 
       getFullName() {
@@ -180,7 +180,7 @@ function crearClaseEmprendedor() {
           // emprendedor.getFullName() deberia devolver 'Elon Musk'
 
           // Tu código aca:
-        return this.nombre + " " + this.apellido
+        return this.nombre + " " + this.apellido; 
           
       }
   }
